@@ -1,19 +1,9 @@
-# wrangler.toml — Cloudflare Pages configuration for ویجاسنتر
-# Used when deploying the Vite frontend + Pages Functions to Cloudflare.
-
-name = "vigasenter"
+name = "vegasenter"
 compatibility_date = "2025-09-01"
 pages_build_output_dir = "dist"
+assets = { directory = "./dist", not_found_handling = "single-page-application" }
 
-# ---- D1 binding ----
-# Make sure you have already created the D1 database:
-#   wrangler d1 create shop-db
-# Then copy the database_id below.
 [[d1_databases]]
 binding = "DB"
 database_name = "shop-db"
 database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
-
-# ---- Local dev ----
-# Run `npm run pages:dev` to spin up a local D1 + Pages Functions preview
-# against your built Vite bundle.
